@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
+import InputTodo from "./InputTodo";
+import ListTodo from "./ListTodo";
 
 const Dashboard = ({ setIsAuthenticated }) => {
   const [name, setName] = useState("");
@@ -56,8 +58,10 @@ const Dashboard = ({ setIsAuthenticated }) => {
 
   return (
     <div>
-      <h1 className="mt-5">Dashboard</h1>
+      <h1 className="mt-5">Task Management System</h1>
       <h2>Hello, {name}</h2>
+      <InputTodo/>
+      <ListTodo/>
       <button onClick={logout} className="btn btn-primary">
         Logout
       </button>
